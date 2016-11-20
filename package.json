@@ -16,10 +16,6 @@
     "_server:build": "tsc -p ./server",
     "postinstall": "npm run build"
   },
-  "author": "damoco",
-  "repository": {
-    "url": "https://github.com/vladotesanovic/angular2-express-starter"
-  },
   "private": true,
   "dependencies": {
     "@angular/common": "^2.1.0",
@@ -57,12 +53,16 @@
     "@types/jsonwebtoken": "^7.1.31",
     "@types/node": "^6.0.42",
     "@types/node-uuid": "0.0.28",
-    "angular-cli": "1.0.0-beta.19-3",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "^2.1.0",
+    "@types/jasmine": "^2.2.30",
+    "@types/node": "^6.0.42",
+    "angular-cli": "1.0.0-beta.20-4",
+    "codelyzer": "~1.0.0-beta.3",
     "concurrently": "^3.1.0",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
@@ -73,7 +73,7 @@
     "karma-remap-istanbul": "^0.2.1",
     "nodemon": "^1.11.0",
     "protractor": "4.0.9",
-    "codelyzer": "1.0.0-beta.1"
+    "codelyzer": "1.0.0-beta.1",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
