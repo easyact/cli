@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar navbar-fixed-top">
+  <h1> {{title}} </h1>
+  <!--<code>-->
+  <!--From Express: {{observable$ | async | json}}-->
+  <!--</code>-->
+  <ul>
+    <li><a routerLink="projects" routerLinkActive="active">项目</a></li>
+    <!--<li><a routerLink="profile" routerLinkActive="active">Profile</a></li>-->
+  </ul>
+</nav><!-- Development tools -->
+<router-outlet></router-outlet><!--<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>-->

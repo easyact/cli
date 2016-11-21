@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { Http, Response } from '@angular/http';
+
+import { Observable } from 'rxjs';
+
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +12,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = '创建项目';
+  observable$: Observable<{}>;
+
+  constructor(http: Http) {
+    this.observable$ = http
+      .get('/api/public/simple')
+      .map((response: Response) => response.json());
+  }
 }
