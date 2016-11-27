@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '创建项目';
+  title = 'EasyAct';
   observable$: Observable<{}>;
 
   constructor(http: Http) {
