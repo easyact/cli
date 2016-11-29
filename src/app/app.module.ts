@@ -7,13 +7,15 @@ import {AppComponent} from './app.component';
 import {routing} from './app.routing';
 import {ProjectListComponent} from './project-list/project-list.component';
 import {ProjectComponent} from './project/project.component';
-import {ProjectService} from "./project.service";
+import {ProjectService} from './project.service';
+import { ProjectBaseComponent } from './project-base/project-base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectListComponent,
-    ProjectComponent
+    ProjectComponent,
+    ProjectBaseComponent,
   ],
   imports: [
     BrowserModule,

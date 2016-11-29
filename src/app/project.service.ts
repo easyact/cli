@@ -1,11 +1,10 @@
-import {Injectable, Input} from '@angular/core';
-import {Http} from "@angular/http";
-import {Observable} from "rxjs";
-import {Project} from "./project";
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs';
+import {Project} from './project';
 
 @Injectable()
 export class ProjectService {
-
   constructor(private http: Http) {
   }
 

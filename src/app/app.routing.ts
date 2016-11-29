@@ -1,6 +1,6 @@
 import {RouterModule, Route} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
-import {ProjectListComponent} from "./project-list/project-list.component";
+import {ProjectListComponent} from './project-list/project-list.component';
 
 const routes: Route[] = [
   {path: '', pathMatch: 'full', redirectTo: 'projects'},

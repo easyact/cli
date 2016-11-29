@@ -18,11 +18,11 @@ app.use(compression());
 app.use(urlencoded({ extended: true }));
 
 // allow cors only for local dev
-app.use(cors({
-  origin: 'http://localhost:4200'
-}));
+// app.use(cors({
+//   origin: 'http://localhost:4200'
+// }));
 
-// app.set('env', 'production');
+app.set('env', 'production');
 
 // api routes
 app.use('/api/secure', protectedRouter);
