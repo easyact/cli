@@ -1,12 +1,15 @@
 import {Router, Response, Request} from 'express';
 
-const publicRouter: Router = Router();
+const r: Router = Router();
 
-publicRouter.get('/projects', (request: Request, response: Response) => {
+r.get('/projects.json', (request: Request, response: Response) => {
   response.json([{
     title: 'Greetings.',
     desc: 'Hello Angular 2'
   }]);
 });
+r.post('/projects.json', (req, res) => {
+  res.json({id: 1});
+});
 
-export {publicRouter}
+export {r}

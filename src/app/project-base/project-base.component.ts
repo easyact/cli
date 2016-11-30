@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Http} from "@angular/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-project-base',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-base.component.css']
 })
 export class ProjectBaseComponent implements OnInit {
+  project = {};
 
-  constructor() { }
+  constructor(private http: Http, private router: Router) {
+  }
 
   ngOnInit() {
   }
 
+  newProject() {
+    this.http.post('api/public/projects.json', this.project).subscribe(
+      p => this.router.navigate(['/projects', p.json().id])
+    );
+  }
 }

@@ -9,6 +9,6 @@ export class ProjectService {
   }
 
   query(): Observable<Project[]> {
-    return this.http.get('/api/public/projects').map(p => p.json());
+    return this.http.get('/api/public/projects.json').map(p => p.json());
   }
 }

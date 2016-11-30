@@ -6,7 +6,7 @@ import * as compression from 'compression';
 
 import { loginRouter } from './routes/login';
 import { protectedRouter } from './routes/protected';
-import { publicRouter } from './routes/public';
+import { r } from './routes/public';
 import { feedRouter } from './routes/feed';
 
 const app: express.Application = express();
@@ -27,7 +27,7 @@ app.set('env', 'production');
 // api routes
 app.use('/api/secure', protectedRouter);
 app.use('/api/login', loginRouter);
-app.use('/api/public', publicRouter);
+app.use('/api/public', r);
 app.use('/api/feed', feedRouter);
 
 if (app.get('env') === 'production') {
