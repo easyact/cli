@@ -1,9 +1,15 @@
-<h3 class="card-header">{{title}}</h3>
-<div class="card col-lg-3 col-md-4" *ngFor="let p of projects">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">{{p.title}}</h4>
-    <p class="card-text">{{p.desc}}</p>
-    <a href="#" class="btn btn-primary">关注</a>
+<div class="container">
+  <h3 class="card-header">{{title}}</h3>
+  <div *ngFor="let projectRow of projects" class="row">
+    <div class="col-lg-3 col-md-4" *ngFor="let p of projectRow">
+      <div class="card">
+        <img class="card-img-top" src="" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{p.name}}</h4>
+          <p class="card-text">{{p.desc}}</p>
+          <a href="#" class="btn btn-primary">关注</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

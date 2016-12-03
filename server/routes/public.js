@@ -6,7 +6,7 @@ exports.r = r;
 const Project = mongoose.model('Project');
 
 r.get('/projects.json', (request, response) => {
-  Project.find(list => response.json(list));
+  Project.find((err, list) => response.json(list));
 });
 r.post('/projects.json', (req, res) => {
   res.json({id: 1});

@@ -1,10 +1,7 @@
-import {Component} from '@angular/core';
-import {Http, Response} from '@angular/http';
-
-import {Observable} from 'rxjs';
-
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import {Component} from "@angular/core";
+import {Http, Response} from "@angular/http";
+import './rxjs-operators';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
