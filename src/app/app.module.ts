@@ -9,6 +9,7 @@ import {ProjectListComponent} from './project-list/project-list.component';
 import {ProjectComponent} from './project/project.component';
 import {ProjectService} from './project.service';
 import { ProjectBaseComponent } from './project-base/project-base.component';
+import { ProjectMassComponent } from './project-mass/project-mass.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProjectBaseComponent } from './project-base/project-base.component';
     ProjectListComponent,
     ProjectComponent,
     ProjectBaseComponent,
+    ProjectMassComponent,
   ],
   imports: [
     BrowserModule,

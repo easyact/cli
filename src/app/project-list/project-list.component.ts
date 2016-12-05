@@ -19,7 +19,7 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.service.query()
-      .subscribe((projects) => {
+      .subscribe(projects => {
         Observable.from(projects)
           .map((project, index) => {
             return {row: Math.floor(index / 4), project: project};
