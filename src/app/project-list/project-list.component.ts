@@ -1,9 +1,8 @@
-import {Component, OnInit, Input} from "@angular/core";
-import {Project} from "../project";
-import {ProjectService} from "../project.service";
-import {GroupedObservable} from "rxjs/operator/groupBy";
-import "../rxjs-operators";
-import {Observable} from "rxjs";
+import {Component, OnInit, Input} from '@angular/core';
+import {Project} from '../project';
+import {ProjectService} from '../project.service';
+import '../rxjs-operators';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-project-list',
