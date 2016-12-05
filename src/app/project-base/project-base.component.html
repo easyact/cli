@@ -1,7 +1,8 @@
 <div class="row">
-  <app-project-list class="col-md-8" [title]="'最新'"></app-project-list>
-  <section class="col-md-4">
+  <app-project-list class="col-md-9" [title]="'最新'"></app-project-list>
+  <section class="col-md-3">
     <div class="jumbotron" name="new">
+      <h1>创建项目</h1>
       <input placeholder="起个名字" [(ngModel)]="project.name" class="form-control-lg"/>
       <button (click)="newProject()" class="btn btn-primary btn-lg">新建项目</button>
     </div>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProjectService} from "../project.service";
+import {Router, ActivatedRoute} from "@angular/router";
+import {Project} from "../project";
 
 @Component({
   selector: 'app-project',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
+  project: Project;
 
-  constructor() { }
+  constructor(private serivce: ProjectService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.route.params.switchMap(params => this.project = this.serivce.get(+params['id']));
   }
 
 }
