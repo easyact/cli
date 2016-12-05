@@ -15,7 +15,9 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.switchMap(params => this.project = this.serivce.get(+params['id']));
+    this.route.params
+      .switchMap(params => this.project = this.serivce.get(params['id']))
+      .subscribe(proj => this.project = proj);
   }
 
 }
