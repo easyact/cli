@@ -1,12 +1,12 @@
 <div class="container">
   <h3 class="card-header">{{title}}</h3>
   <div class="col-md-3" *ngFor="let p of projects">
-    <div class="card">
-      <img class="card-img-top" src="" alt="Card image cap">
+    <div class="card" style="height: 12em">
+      <img class="card-img-top" src="" alt="Card image cap" style="height: 4em">
       <div class="card-block">
         <h4 class="card-title">{{p.name}}</h4>
         <p class="card-text">{{p.desc}}</p>
-        <a href="#" class="btn btn-primary">加入</a>
+        <a href="#" class="btn btn-primary btn-sm">加入</a>
       </div>
     </div>
   </div>
