@@ -5,10 +5,10 @@
     <div *ngIf="false">
       <a (click)="list=true">对齐</a><a (click)="list=false">不对齐</a>
     </div>
-    <div class="jumbotron" name="new">
+    <form class="jumbotron">
       <h1>创建项目</h1>
-      <input placeholder="给项目起个名字" [(ngModel)]="project.name" class="form-control-lg"/>
+      <input name="name" placeholder="给项目起个名字" [(ngModel)]="project.name" class="form-control-lg"/>
       <button (click)="newProject()" class="btn btn-primary btn-lg">新建项目</button>
-    </div>
+    </form>
   </section>
 </div>

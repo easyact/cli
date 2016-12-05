@@ -9,5 +9,6 @@ r.get('/projects.json', (request, response) => {
   Project.find((err, list) => response.json(list));
 });
 r.post('/projects.json', (req, res) => {
-  res.json({id: 1});
+  new Project(req.body).save()
+    .then(project => res.end(`${project._id}`), err => res.end(err));
 });

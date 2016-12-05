@@ -18,7 +18,7 @@ export class ProjectBaseComponent implements OnInit {
 
   newProject() {
     this.http.post('api/public/projects.json', this.project).subscribe(
-      p => this.router.navigate(['/projects', p.json().id])
+      id => this.router.navigate(['/projects', id.text()])
     );
   }
 }
