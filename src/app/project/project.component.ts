@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ProjectService} from "../project.service";
 import {ActivatedRoute} from "@angular/router";
 import {Project} from "../project";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-project',
@@ -9,7 +10,7 @@ import {Project} from "../project";
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-  project: Project;
+  project: Observable<Project>;
 
   constructor(private serivce: ProjectService, private route: ActivatedRoute) {
   }
@@ -17,7 +18,10 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .switchMap(params => this.serivce.get(params['id']))
-      .subscribe(proj => this.project = proj);
+      .subscribe(proj => {
+        this.project = proj;
+        // console.log(this.project);
+      });
   }
 
 }

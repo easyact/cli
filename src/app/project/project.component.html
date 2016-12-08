@@ -1,2 +1,9 @@
-<p>
-  project {{project|json}} </p>
+<div *ngIf="project">
+  <div class="card-header">
+    <h1 class="float-md-left">{{project.name}}</h1>
+    <button class="btn btn-primary btn-sm">申请加入</button>
+  </div>
+  <p>{{project.desc}}</p>
+  <!--<p>-->
+  <!--project {{project|json}} </p>-->
+</div>
