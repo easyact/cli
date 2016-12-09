@@ -1,6 +1,14 @@
 <div class="modal-header">
-  <h1 class="float-md-left">{{project.name}}</h1>
-  <h1 class="float-md-left">{{project.name}}</h1>
-  <button class="btn btn-link btn-sm">编辑</button>
+  <h1 class="float-md-left">
+    <div *ngIf="!editing.head">
+      {{project.name}}
+      <button class="btn btn-link" (click)="editing.head=true">编辑</button>
+    </div>
+    <form (submit)="update()" *ngIf="editing.head">
+      <input [(ngModel)]="project.name" name="name"/>
+      <input class="btn btn-primary" value="保存" name="submit"/>
+      <button class="btn btn-link" (click)="editing.head=false">取消</button>
+    </form>
+  </h1>
   <button class="btn btn-primary btn-sm">申请加入</button>
 </div><p>{{project.desc}}</p>

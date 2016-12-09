@@ -10,6 +10,7 @@ import {Project} from "../project";
 })
 export class ProjectComponent implements OnInit {
   project: Project = {};
+  editing = {};
 
   constructor(private serivce: ProjectService, private route: ActivatedRoute) {
   }
