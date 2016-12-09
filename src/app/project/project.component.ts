@@ -2,7 +2,6 @@ import {Component, OnInit} from "@angular/core";
 import {ProjectService} from "../project.service";
 import {ActivatedRoute} from "@angular/router";
 import {Project} from "../project";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-project',
@@ -10,7 +9,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-  project: Observable<Project>;
+  project: Project = {};
 
   constructor(private serivce: ProjectService, private route: ActivatedRoute) {
   }
