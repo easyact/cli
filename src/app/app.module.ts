@@ -8,8 +8,9 @@ import {routing} from './app.routing';
 import {ProjectListComponent} from './project-list/project-list.component';
 import {ProjectComponent} from './project/project.component';
 import {ProjectService} from './project.service';
-import { ProjectBaseComponent } from './project-base/project-base.component';
-import { ProjectMassComponent } from './project-mass/project-mass.component';
+import {ProjectBaseComponent} from './project-base/project-base.component';
+import {ProjectMassComponent} from './project-mass/project-mass.component';
+import {ProjectRoutingModule} from "./project.routing";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProjectMassComponent } from './project-mass/project-mass.component';
     BrowserModule,
     routing,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ProjectRoutingModule
   ],
   providers: [ProjectService],
   bootstrap: [AppComponent]

@@ -1,12 +1,14 @@
 <nav class="navbar bg-faded bg-inverse navbar-dark navbar-fixed-top">
-  <a class="navbar-brand" href="/"> {{title}} </a>
-  <!--<code>-->
-  <!--From Express: {{observable$ | async | json}}-->
-  <!--</code>-->
-  <ul class="nav navbar-nav">
-    <li class="nav-item" routerLinkActive="active"><a routerLink="projects" class="nav-link">项目</a></li>
-    <!--<li><a routerLink="profile" routerLinkActive="active">Profile</a></li>-->
-  </ul>
-  <!--<button class="btn btn-lg btn-success">test</button>-->
+  <div class="container">
+    <a class="navbar-brand" href="/"> {{title}} </a>
+    <!--<code>-->
+    <!--From Express: {{observable$ | async | json}}-->
+    <!--</code>-->
+    <ul class="nav navbar-nav">
+      <li class="nav-item" routerLinkActive="active"><a routerLink="projects" class="nav-link">项目</a></li>
+      <!--<li><a routerLink="profile" routerLinkActive="active">Profile</a></li>-->
+    </ul>
+  </div>
 </nav><!-- Development tools -->
-<router-outlet class="container"></router-outlet><!--<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>-->
+<router-outlet
+  class="container"></router-outlet><!--<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>-->
