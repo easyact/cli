@@ -13,31 +13,26 @@ export class ResourceFactory {
   }
 }
 
+/*
+ 不能把http方法抽出来. 因为http方法用了this
+ */
 export class Resource {
   constructor(private http: Http, private base: String) {
   }
 
   query<T>(): Observable<T[]> {
-    return this.httpDo(this.http.get);
+    return this.http.get(`${this.base}.json`).map(o => o.json());
   }
 
   get<T>(id): Observable<T> {
-    return this.httpDoById(this.http.get, id);
+    return this.http.get(`${this.base}/${id}.json`).map(o => o.json());
   }
 
   put(id, body) {
-    return this.httpDoById(this.http.put, id, body);
+    return this.http.put(`${this.base}/${id}.json`, body).map(o => o.json());
   }
 
   post(body) {
-    return this.httpDo(this.http.post, '', body);
-  }
-
-  private httpDoById(action, id, body?) {
-    return this.httpDo(action, `/${id}`, body);
-  }
-
-  private httpDo(action, path?: string, body?: string) {
-    return action(`${this.base}${path}.json`, body).map(o => o.json());
+    return this.http.post(`${this.base}${''}.json`, body).map(o => o.json());
   }
 }
