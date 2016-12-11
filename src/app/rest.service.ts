@@ -1,17 +1,16 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs';
-import {Project} from './project';
 
 @Injectable()
-export class ResourceFactory {
+export class Resource {
   private base: String;
 
   constructor(private http: Http) {
   }
 
-  $create(resource: String): ResourceFactory {
-    let o = new ResourceFactory(this.http);
+  $create(resource: String): Resource {
+    let o = new Resource(this.http);
     o.base = `/api/public/${resource}`;
     return o;
   }
