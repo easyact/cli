@@ -6,7 +6,7 @@
     </div>
     <form (submit)="update()" *ngIf="editing.head">
       <input [(ngModel)]="project.name" name="name"/>
-      <input class="btn btn-primary" value="保存" name="submit"/>
+      <input class="btn btn-primary" value="保存" name="submit" type="submit"/>
       <button class="btn btn-link" (click)="editing.head=false">取消</button>
     </form>
   </h1>

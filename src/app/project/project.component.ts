@@ -10,7 +10,7 @@ import {ResourceFactory, Resource} from "../rest.service";
 })
 export class ProjectComponent implements OnInit {
   project: Project = {};
-  editing = {};
+  editing = {name: false};
   private resource: Resource;
 
   constructor(private factory: ResourceFactory, private route: ActivatedRoute) {
@@ -24,6 +24,10 @@ export class ProjectComponent implements OnInit {
   }
 
   update() {
-    this.resource.put(this.project['_id'], this.project);
+    console.log(`updating ${this.project}`);
+    this.resource.put(this.project['_id'], this.project).subscribe(p => {
+      this.project = p;
+      this.editing.name = false;
+    });
   }
 }
