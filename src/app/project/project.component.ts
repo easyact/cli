@@ -23,5 +23,7 @@ export class ProjectComponent implements OnInit {
         // console.log(this.project);
       });
   }
-
+  update(){
+    // this.serivce.
+  }
 }
