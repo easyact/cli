@@ -9,7 +9,8 @@ import {ProjectComponent} from "./project/project.component";
 import {ProjectBaseComponent} from "./project-base/project-base.component";
 import {ProjectMassComponent} from "./project-mass/project-mass.component";
 import {ProjectRoutingModule} from "./project.routing";
-import {Resource} from "./rest.service";
+import {ResourceFactory} from "./rest.service";
+import {ProjectService} from "./project.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {Resource} from "./rest.service";
     HttpModule,
     ProjectRoutingModule
   ],
-  providers: [Resource],
+  providers: [ResourceFactory, ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

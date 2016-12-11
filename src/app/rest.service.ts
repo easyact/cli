@@ -3,16 +3,18 @@ import {Http} from '@angular/http';
 import {Observable} from 'rxjs';
 
 @Injectable()
-export class Resource {
-  private base: String;
+export class ResourceFactory {
 
   constructor(private http: Http) {
   }
 
   $create(resource: String): Resource {
-    let o = new Resource(this.http);
-    o.base = `/api/public/${resource}`;
-    return o;
+    return new Resource(this.http, `/api/public/${resource}`);
+  }
+}
+
+export class Resource {
+  constructor(private http: Http, private base: String) {
   }
 
   query<T>(): Observable<T[]> {

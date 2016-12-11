@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {Project} from "../project";
-import {Resource} from "../rest.service";
+import {ResourceFactory, Resource} from "../rest.service";
 
 @Component({
   selector: 'app-project',
@@ -13,17 +13,14 @@ export class ProjectComponent implements OnInit {
   editing = {};
   private resource: Resource;
 
-  constructor(private factory: Resource, private route: ActivatedRoute) {
+  constructor(private factory: ResourceFactory, private route: ActivatedRoute) {
     this.resource = factory.$create('projects');
   }
 
   ngOnInit() {
     this.route.params
       .switchMap(params => this.resource.get(params['id']))
-      .subscribe(proj => {
-        this.project = proj;
-        // console.log(this.project);
-      });
+      .subscribe(o => this.project = o);
   }
 
   update() {
