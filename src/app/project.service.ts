@@ -1,18 +1,21 @@
-import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {Observable} from 'rxjs';
-import {Project} from './project';
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
+import {Project} from "./project";
+import {ResourceFactory, Resource} from "./rest.service";
 
 @Injectable()
 export class ProjectService {
-  constructor(private http: Http) {
+  private resource: Resource;
+
+  constructor(private resourceFactory: ResourceFactory) {
+    this.resource = resourceFactory.$create('projects');
   }
 
   query(): Observable<Project[]> {
-    return this.http.get('/api/public/projects.json').map(projects => projects.json());
+    return this.resource.query();
   }
 
   get(id): Observable<Project> {
-    return this.http.get(`/api/public/projects/${id}.json`).map(p => p.json());
+    return this.resource.get(id);
   }
 }
