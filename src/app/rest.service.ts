@@ -29,8 +29,7 @@ export class Resource {
   }
 
   put(id, body) {
-    return this.http.put(`${this.base}/${id}.json`, body).map(
-      o => o.json());
+    return this.http.put(`${this.base}/${id}.json`, body);
   }
 
   post(body) {

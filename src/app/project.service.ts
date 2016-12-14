@@ -12,10 +12,10 @@ export class ProjectService {
   }
 
   query(): Observable<Project[]> {
-    return this.resource.query();
+    return this.resource.query<Project>();
   }
 
   get(id): Observable<Project> {
-    return this.resource.get(id);
+    return this.resource.get<Project>(id);
   }
 }

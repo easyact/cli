@@ -1,14 +1,23 @@
+<p class="alert alert-warning" *ngIf="err">{{err}}</p>
 <div class="modal-header">
   <h1 class="float-md-left">
-    <div *ngIf="!editing.head">
+    <div *ngIf="!editing.name">
       {{project.name}}
-      <button class="btn btn-link" (click)="editing.head=true">编辑</button>
+      <button class="btn btn-link" (click)="editing.name=true">编辑</button>
     </div>
-    <form (submit)="update()" *ngIf="editing.head">
+    <form (submit)="update()" *ngIf="editing.name">
       <input [(ngModel)]="project.name" name="name"/>
       <input class="btn btn-primary" value="保存" name="submit" type="submit"/>
-      <button class="btn btn-link" (click)="editing.head=false">取消</button>
+      <button class="btn btn-link" (click)="editing.name=false">取消</button>
     </form>
   </h1>
   <button class="btn btn-primary btn-sm">申请加入</button>
 </div><p>{{project.desc}}</p>
+<form>
+  <input name="name" [(ngModel)]="newTask.name"/>
+  <!--<input value="新增任务" type="submit"/>-->
+  <button (click)="addTask()">新增任务</button>
+</form>
+<ul>
+  <li *ngFor="let task of project.tasks">{{task.name}}</li>
+</ul>

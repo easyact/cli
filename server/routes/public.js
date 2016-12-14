@@ -9,6 +9,11 @@ r.get('/projects.json', (request, response) => {
   Project.find((err, list) => response.json(list));
 });
 
+r.put('/projects/:id.json', (req, res) => {
+  Project.findByIdAndUpdate(req.params.id, req.body)
+    .then(project => res.end(), err => res.end(err));
+});
+
 r.get('/projects/:id.json', (req, res) => {
   Project.findById(req.params.id).then(project => res.json(project), err => res.end(err));
 });
