@@ -13,7 +13,6 @@ export class ProjectComponent implements OnInit {
   editing = {name: false};
   private resource: Resource;
   private err;
-  private newTask = {};
 
   constructor(private factory: ResourceFactory, private route: ActivatedRoute) {
     this.resource = factory.$create('projects');
@@ -25,19 +24,12 @@ export class ProjectComponent implements OnInit {
       .subscribe(o => this.project = o);
   }
 
-  update() {
-    console.log(`updating ${this.project}`);
+  set() {
+    console.log(`Http putting project`, this.project);
     this.resource.put(this.project['_id'], this.project)
       .catch(e => this.err = e)
       .subscribe(p => {
         this.editing.name = false;
       });
-  }
-
-  addTask() {
-    this.project.tasks = this.project.tasks || [];
-    this.project.tasks.push(this.newTask);
-    this.update();
-    this.newTask = {};
   }
 }

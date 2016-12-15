@@ -11,6 +11,8 @@ import {ProjectMassComponent} from "./project-mass/project-mass.component";
 import {ProjectRoutingModule} from "./project.routing";
 import {ResourceFactory} from "./rest.service";
 import {ProjectService} from "./project.service";
+import { TaskFormComponent } from './task-form/task-form.component';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import {ProjectService} from "./project.service";
     ProjectComponent,
     ProjectBaseComponent,
     ProjectMassComponent,
+    TaskFormComponent,
+    TaskListComponent,
   ],
   imports: [
     BrowserModule,
