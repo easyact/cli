@@ -18,6 +18,10 @@
   <!--<input value="新增任务" type="submit"/>-->
   <button (click)="addTask()">新增任务</button>
 </form>
+<form *task="ngForm" (ngSubmit)="addTask2(task)">
+  <input name="name" ngModel/>
+  <button>新增任务</button>
+</form>
 <ul>
   <li *ngFor="let task of project.tasks">{{task.name}}</li>
 </ul>
