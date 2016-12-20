@@ -1,7 +1,8 @@
+<h2>任务</h2>
+<ul>
+  <li *ngFor="let task of project.tasks">{{task.name}}<span class="glyphicon glyphicon-trash"></span></li>
+</ul>
 <form #taskForm="ngForm" (ngSubmit)="addTask2(taskForm.value)">
   <input name="name" ngModel/>
   <button type="submit" [disabled]="!taskForm.form.valid">新增任务</button>
 </form>
-<ul>
-  <li *ngFor="let task of project.tasks">{{task.name}}</li>
-</ul>

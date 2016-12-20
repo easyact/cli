@@ -5,7 +5,6 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "startold": "ng serve --proxy-config proxy.conf.json & npm run _server:run",
     "start": "concurrently --kill-others \"ng build -w --output-path=dist/client\" \"npm run _server:run\"",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
