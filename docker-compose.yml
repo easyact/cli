@@ -1,0 +1,18 @@
+node:
+  image: damoco/easyact-dev
+  volumes:
+    - ./dist:/usr/src/app/dist
+    - ./src:/usr/src/app/src
+  ports:
+    - 4300:4300
+    - 4200:4200
+    - 27017:27017
+#  links:
+#    - mongo
+#  command: cat src/index.html
+
+mongo:
+  image: mongo
+  volumes:
+    - ./data:/data/db
+  net: "container:node"
